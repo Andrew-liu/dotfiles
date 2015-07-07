@@ -142,3 +142,6 @@ ls='ls --color=auto'
 alias reds="/Users/andrew_liu/Development/redis-3.0.2/src/redis-server"
 alias redc="/Users/andrew_liu/Development/redis-3.0.2/src/redis-cli"
 
+# Android platform
+export ANDROID_HOME="/Users/andrew_liu/Development/Andriod/android-sdk-macosx/platform-tools"
+export PATH=$PATH:$ANDROID_HOME
