@@ -81,7 +81,7 @@ alias zshconfig="vim ~/.zshrc"
 alias rezsh="source ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 
-
+# use cnpm instead of npm
 #NVM, Node Mirror
 #export NVM_NODEJS_ORG_MIRROR="http://npm.taobao.org/mirrors/node"
 #export NVM_IOJS_ORG_MIRROR="http://npm.taobao.org/mirrors/iojs"
@@ -97,22 +97,22 @@ alias nano="subl"
 export EDITOR=/usr/bin/vim
 
 # Hadoop 
-export HADOOP_HOME="/usr/local/Cellar/hadoop/2.6.0"
-alias hstart="/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh"
-alias hstop="/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh"
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH=$PATH:$HADOOP_HOME/bin:/usr/local/Cellar/hive/1.0.0/bin
-export HADOOP_CLASSPATH="/usr/local/Cellar/hbase/1.0.0/libexec/lib/*.jar:$HBASE_HOME/lib/*.jar:$HIVE_HOME/lib/*.jar"
+#export HADOOP_HOME="/usr/local/Cellar/hadoop/2.6.0"
+#alias hstart="/usr/local/Cellar/hadoop/2.6.0/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/start-yarn.sh"
+#alias hstop="/usr/local/Cellar/hadoop/2.6.0/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.6.0/sbin/stop-dfs.sh"
+#export JAVA_HOME="$(/usr/libexec/java_home)"
+#export PATH=$PATH:$HADOOP_HOME/bin:/usr/local/Cellar/hive/1.0.0/bin
+#export HADOOP_CLASSPATH="/usr/local/Cellar/hbase/1.0.0/libexec/lib/*.jar:$HBASE_HOME/lib/*.jar:$HIVE_HOME/lib/*.jar"
 
 # Hive
-export HIVE_HOME="/usr/local/Cellar/hive/1.0.0/libexec"
-alias hive='/usr/local/Cellar/hive/1.0.0/bin/hive'
+#export HIVE_HOME="/usr/local/Cellar/hive/1.0.0/libexec"
+#alias hive='/usr/local/Cellar/hive/1.0.0/bin/hive'
 
 # HBase
-export HBASE_HOME="/usr/local/Cellar/hbase/1.0.0/libexec"
-alias bstart='/usr/local/Cellar/hbase/1.0.0/bin/start-hbase.sh'
-alias bstop='/usr/local/Cellar/hbase/1.0.0/bin/stop-hbase.sh'
-alias hbase='/usr/local/Cellar/hbase/1.0.0/bin/hbase'
+#export HBASE_HOME="/usr/local/Cellar/hbase/1.0.0/libexec"
+#alias bstart='/usr/local/Cellar/hbase/1.0.0/bin/start-hbase.sh'
+#alias bstop='/usr/local/Cellar/hbase/1.0.0/bin/stop-hbase.sh'
+#alias hbase='/usr/local/Cellar/hbase/1.0.0/bin/hbase'
 
 # The default command paramters
 alias vi='vim'
@@ -194,8 +194,16 @@ echo -e "${sp}(此Mac仅用于\033[41;43;3m andrew_liu \033[0m日常装逼, 闲�
 echo " "
 
 # Go PATH
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOROOT/bin
+# add protoc-gen-go PATH
+export GOPATH=/Users/andrew_liu/Development/Golang/website
+export PATH=$PATH:$GOPATH/bin
 
-# command using shadowsocks
-export ALL_PROXY=socks5://127.0.0.1:1080
+# autojump config
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# Tecent proxy
+export yesproxy='export http_proxy=http://proxy.tencent.com:8080 https_proxy://proxy.tencent.com:8080'
+export noproxy='unset http_proxy https_proxy'
